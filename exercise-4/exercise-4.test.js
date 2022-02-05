@@ -6,7 +6,7 @@ describe('exercise 4', () => {
 
   it('find the average film length by category', async() => {
     const { rows } = await pool.query(fs.readFileSync(`${__dirname}/exercise-4.sql`, 'utf-8'));
-    expect(rows).toEqual(expect.arrayContaining([
+    expect(rows).toEqual([
       { name: 'Family', avg: '114.7826086956521739' },
       { name: 'Games', avg: '127.8360655737704918' },
       { name: 'Animation', avg: '111.0151515151515152' },
@@ -23,6 +23,6 @@ describe('exercise 4', () => {
       { name: 'Action', avg: '111.6093750000000000' },
       { name: 'Sci-Fi', avg: '108.1967213114754098' },
       { name: 'Comedy', avg: '115.8275862068965517' },
-    ]));
+    ]);
   });
 });
